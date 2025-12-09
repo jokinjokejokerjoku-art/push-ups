@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>プッシュアップ記録</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>プッシュアップ記録</h1>
+
+    <section class="add-form">
+      <label>日付: <input type="date" id="dateInput"></label>
+      <label>回数: <input type="number" id="countInput" min="0" value="10"></label>
+      <label>フォーム: 
+        <select id="formInput">
+          <option value="normal">通常</option>
+          <option value="bar">プッシュアップバーあり</option>
+          <option value="decline">デクライン</option>
+        </select>
+      </label>
+      <button id="addBtn">追加</button>
+      <label>表示フィルター: 
+        <select id="filterSelect">
+          <option value="all">すべて</option>
+          <option value="normal">通常</option>
+          <option value="bar">プッシュアップバーあり</option>
+          <option value="decline">デクライン</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="chart-area">
+      <canvas id="pushupChart" height="120"></canvas>
+    </section>
+
+    <section class="table-area">
+      <table id="recordsTable">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>通常</th>
+            <th>プッシュアップバーあり</th>
+            <th>デクライン</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="summary">
+      <p id="totalText">合計: 0</p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
